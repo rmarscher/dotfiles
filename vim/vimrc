@@ -5,9 +5,10 @@ set backspace=indent,eol,start
 
 " Menus I like :-)
 " This must happen before the syntax system is enabled
-aunmenu Help.
-aunmenu Window.
+" aunmenu Help.
+" aunmenu Window.
 let no_buffers_menu=1
+set mouse=a
 set mousemodel=popup
 
 " Better modes.  Remeber where we are, support yankring
@@ -20,7 +21,7 @@ syntax on
 if has("gui_running")
   colorscheme fruity
   set guifont=Consolas:h13
-  set fuoptions=maxvert,maxhorz
+  " set fuoptions=maxvert,maxhorz
   " does not work properly on os x
   " au GUIEnter * set fullscreen
 else
@@ -33,6 +34,50 @@ autocmd BufEnter * :syntax sync fromstart
 " Move Backup Files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
+
+" Turnoff swapfiles
+set noswapfile
+
+" Set persistent undo (vim7.3 only)
+set undodir=~/.vim/undodir
+set undofile
+
+" Some Custom shortcuts that I like to use
+" <F2> for save in all three modes
+noremap <F2> <Esc>:w<CR>
+inoremap <F2> <Esc>:w<CR>
+nnoremap <F2> <Esc>:w<CR>
+vnoremap <F2> <Esc>:w<CR>
+
+" Toggle pate with <F3>
+set pastetoggle=<F3>
+
+" Drop to shell with <F5> in all three modes
+noremap <F5> <Esc>:shell<CR>
+inoremap <F5> <Esc>:shell<CR>
+nnoremap <F5> <Esc>:shell<CR>
+vnoremap <F5> <Esc>:shell<CR>
+
+" Left/Right arrow keys change buffers in all modes
+noremap <Left> <Esc>:bp<CR> 
+inoremap <Left> <Esc>:bp<CR> 
+nnoremap <Left> <Esc>:bp<CR> 
+vnoremap <Left> <Esc>:bp<CR> 
+
+noremap <Right> <Esc>:bn<CR> 
+inoremap <Right> <Esc>:bn<CR> 
+nnoremap <Right> <Esc>:bn<CR> 
+vnoremap <Right> <Esc>:bn<CR> 
+
+" disable arrow keys
+noremap <up> <nop>
+noremap <down> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
 
 " Remember cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -86,13 +131,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" arrow keys move visible lines
-inoremap <Down> <C-R>=pumvisible() ? "\<lt>Down>" : "\<lt>C-O>gj"<CR>
-inoremap <Up> <C-R>=pumvisible() ? "\<lt>Up>" : "\<lt>C-O>gk"<CR>
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
 
 " And be global by default
 set gdefault
@@ -217,7 +255,7 @@ set incsearch
 
 " map :BufClose to :bq and configure it to open a file browser on close
 let g:BufClose_AltBuffer = '.'
-cnoreabbr <expr> bq 'BufClose' 
+cnoreabbr <expr> bq 'BufClose'
 
 " Disable the colorcolumn when switching modes.  Make sure this is the
 " first autocmd for the filetype here
@@ -289,17 +327,9 @@ let g:closetag_default_xml=1
 autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/scripts/closetag.vim
 
-" Verilog
-" -------
-autocmd FileType verilog setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
-
 " CSS
 " ---
 autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-
-" Java
-" ----
-autocmd FileType java setlocal shiftwidth=2 tabstop=8 softtabstop=2 expandtab
 
 " rst
 " ---
@@ -307,12 +337,6 @@ autocmd BufNewFile,BufRead *.txt setlocal ft=rst
 autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 \ formatoptions+=nqt textwidth=74
 
-" C#
-autocmd FileType cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
-
-" C/C++
-autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
-autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 
 " vim
 " ---
@@ -323,6 +347,3 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 let javascript_enable_domhtmlcss=1
 
-" D
-" -
-autocmd FileType d setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4

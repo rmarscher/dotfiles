@@ -4,3 +4,4 @@
 *.bak
 vim/.netrwhist
 vim/sessions
+vim/undodir
