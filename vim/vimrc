@@ -35,7 +35,7 @@ autocmd BufEnter * :syntax sync fromstart
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
-" Turnoff swapfiles
+" Turn off annoying swapfiles
 set noswapfile
 
 " Set persistent undo (vim7.3 only)
@@ -69,7 +69,7 @@ inoremap <Right> <Esc>:bn<CR>
 nnoremap <Right> <Esc>:bn<CR> 
 vnoremap <Right> <Esc>:bn<CR> 
 
-" disable arrow keys
+" disable up/down arrow keys
 noremap <up> <nop>
 noremap <down> <nop>
 nnoremap <up> <nop>
