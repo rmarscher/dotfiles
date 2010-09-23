@@ -3,13 +3,23 @@
 set nocompatible
 set backspace=indent,eol,start
 
+" Convince Vim it can use 256 colors inside Gnome Terminal
+set t_Co=256
+
 " Menus I like :-)
 " This must happen before the syntax system is enabled
 " aunmenu Help.
 " aunmenu Window.
 let no_buffers_menu=1
+
+" Mouse Settings
+" Enable mouse everywhere
 set mouse=a
-set mousemodel=popup
+" Hide mouse pointer while typing
+set mousehide
+" set mousemodel=popup
+" Make mouse middle click paste without formatting it.
+map <MouseMiddle> <Esc>"*p
 
 " Better modes.  Remeber where we are, support yankring
 set viminfo=!,'100,\"100,:20,<50,s10,h,n~/.viminfo
@@ -59,15 +69,15 @@ nnoremap <F5> <Esc>:shell<CR>
 vnoremap <F5> <Esc>:shell<CR>
 
 " Left/Right arrow keys change buffers in all modes
-noremap <Left> <Esc>:bp<CR> 
-inoremap <Left> <Esc>:bp<CR> 
-nnoremap <Left> <Esc>:bp<CR> 
-vnoremap <Left> <Esc>:bp<CR> 
+noremap <Left> <Esc>:bp<CR>
+inoremap <Left> <Esc>:bp<CR>
+nnoremap <Left> <Esc>:bp<CR>
+vnoremap <Left> <Esc>:bp<CR>
 
-noremap <Right> <Esc>:bn<CR> 
-inoremap <Right> <Esc>:bn<CR> 
-nnoremap <Right> <Esc>:bn<CR> 
-vnoremap <Right> <Esc>:bn<CR> 
+noremap <Right> <Esc>:bn<CR>
+inoremap <Right> <Esc>:bn<CR>
+nnoremap <Right> <Esc>:bn<CR>
+vnoremap <Right> <Esc>:bn<CR>
 
 " disable up/down arrow keys
 noremap <up> <nop>
@@ -78,6 +88,9 @@ vnoremap <up> <nop>
 vnoremap <down> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
+
+" Rempam Vim 0 to ^
+noremap 0 ^
 
 " Remember cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -122,7 +135,7 @@ set wildmode=list:full
 
 " go with smartindent if there is no plugin indent file.
 " but don't outdent hashes
-set smartindent
+set autoindent  smartindent
 inoremap # X#
 
 " quicker window switching
@@ -142,7 +155,6 @@ nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" split edit vimrc
 nnoremap <leader>ev <C-w><C-s><C-l>:e $MYVIMRC<CR>
 
 " Remove trailing whitespace on <leader>S
@@ -155,7 +167,7 @@ nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
 
 " NERDtree on <leader>t
-nnoremap <leader>t :NERDTree<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
 " Scratch
@@ -195,6 +207,7 @@ set cmdheight=2
 set laststatus=2
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 set showcmd
+set showmode
 set number
 
 " Tab Settings
@@ -252,6 +265,7 @@ vnoremap <F1> <ESC>
 " Better Search
 set hlsearch
 set incsearch
+set showmatch
 
 " map :BufClose to :bq and configure it to open a file browser on close
 let g:BufClose_AltBuffer = '.'
