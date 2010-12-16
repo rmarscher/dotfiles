@@ -77,15 +77,15 @@ set pastetoggle=<F3>
 "vnoremap <F5> <Esc>:shell<CR>
 
 " Left/Right arrow keys change buffers in all modes
-noremap <Left> <Esc>:tabprevious<CR>
-inoremap <Left> <Esc>:tabprevious<CR>
-nnoremap <Left> <Esc>:tabprevious<CR>
-vnoremap <Left> <Esc>:tabprevious<CR>
+noremap <Left> <Esc>:bp<CR>
+inoremap <Left> <Esc>:bp<CR>
+nnoremap <Left> <Esc>:bp<CR>
+vnoremap <Left> <Esc>:bp<CR>
 
-noremap <Right> <Esc>:tabnext<CR>
-inoremap <Right> <Esc>:tabnext<CR>
-nnoremap <Right> <Esc>:tabnext<CR>
-vnoremap <Right> <Esc>:tabnext<CR>
+noremap <Right> <Esc>:bn<CR>
+inoremap <Right> <Esc>:bn<CR>
+nnoremap <Right> <Esc>:bn<CR>
+vnoremap <Right> <Esc>:bn<CR>
 
 " disable up/down arrow keys
 noremap <up> <nop>
@@ -265,6 +265,15 @@ function! GuiTabLabel()
   return label
 endfunction
 set guitablabel=%{GuiTabLabel()}
+
+" Gvim Settings
+
+" Make shift-insert work like in Xterm
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+
+" Hide the mouse when typing text
+set mousehide
 
 " utf-8 default encoding
 set enc=utf-8
