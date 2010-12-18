@@ -30,7 +30,8 @@ set viminfo=!,'100,\"100,:20,<50,s10,h,n~/.viminfo
 syntax on
 if has("gui_running")
   colorscheme fruity
-  set guifont="Inconsolata Medium 11"
+  " set guifont="Inconsolata Medium 11"
+  set guifont="Consolas 12"
   " set fuoptions=maxvert,maxhorz
   " does not work properly on os x
   " au GUIEnter * set fullscreen
@@ -66,6 +67,13 @@ noremap <F2> <Esc>:w<CR>
 inoremap <F2> <Esc>:w<CR>
 nnoremap <F2> <Esc>:w<CR>
 vnoremap <F2> <Esc>:w<CR>
+
+" <leader>dd to delete buffer
+noremap <leader>dd <Esc>:bd<CR>
+vnoremap <leader>dd <Esc>:bd<CR>
+
+" Map jj to <Esc>
+inoremap jj <Esc>
 
 " Toggle pate with <F3>
 set pastetoggle=<F3>
@@ -404,4 +412,8 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 " ----------
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 let javascript_enable_domhtmlcss=1
+
+" Tasks
+" -----
+autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks  setfiletype task
 
