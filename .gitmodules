@@ -42,7 +42,4 @@
 	url = git://github.com/chrismetcalf/vim-yankring.git
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
-	url = git://github.com/nvie/vim-pyflakes.git
-[submodule "pyflakes"]
-	path = pyflakes
 	url = git://github.com/kevinw/pyflakes-vim.git
