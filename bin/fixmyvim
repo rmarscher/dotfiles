@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+BUNDLES = {
+    'github': (
+       ('git://github.com/tpope/vim-fugitive.git', 'fugutive'),
+       ('git://git.wincent.com/command-t.git','command-t'),
+       ('git://github.com/tpope/vim-surround.git','surround'),
+       ('git://github.com/tpope/vim-repeat.git','repeat'),
+       ('git://github.com/scrooloose/nerdtree.git','nerdtree'),
+       ('git://github.com/scrooloose/nerdcommenter.git','nerdcommenter'),
+       ('git://github.com/godlygeek/csapprox.git','csapprox'),
+       ('git://github.com/tsaleh/vim-supertab.git','supertab'),
+       ('git://github.com/msanders/snipmate.vim.git','snipmate'),
+       ('git://github.com/tpope/vim-vividchalk.git','vividchalk'),
+       ('git://github.com/scrooloose/syntastic.git', 'syntastic')
+       ('git://github.com/mexpolk/vim-taglist.git','taglist')
+       ('git://github.com/chrismetcalf/vim-yankring.git','yankring')
+       # ('',''),
+    ),
+    'vimscripts' : (
+        #('','','')
+    )
+}
