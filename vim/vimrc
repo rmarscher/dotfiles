@@ -48,15 +48,13 @@ set undofile
 " Enable Syntax Colors
 syntax on
 if has("gui_running")
-  colorscheme vividchalk
-  " set guifont="Inconsolata Medium 11"
   set guifont="Consolas 12"
-  " set fuoptions=maxvert,maxhorz
-  " does not work properly on os x
-  " au GUIEnter * set fullscreen
 else
   colorscheme mustang
 endif
+
+set background=dark
+colorscheme solarized
 
 " Set fixed height widht of gvim window
 if has('gui_running')
@@ -71,6 +69,8 @@ let mapleader=","
 let maplocalleader="\\"
 
 noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>O <Esc>:CommandTFlush<CR>
+noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 " <F2> for save in all three modes
 noremap <F2> <Esc>:w<CR>
@@ -178,8 +178,6 @@ nnoremap <leader>q :q<CR>
 
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
-
-map <leader>b :Explore!<CR>
 
 " NERDtree on <leader>t
 nnoremap <leader>t :NERDTreeToggle<CR>

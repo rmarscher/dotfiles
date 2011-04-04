@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/mir/Labs/mirnazim.org/templates'
+let g:netrw_dirhist_2='/home/mir/Labs/mirnazim.org/content'
+let g:netrw_dirhist_3='/home/mir/Work/hgadmin/keys/users'
+let g:netrw_dirhist_4='/home/mir/.ssh'
+let g:netrw_dirhist_5='/home/mir/gitolite-admin/conf'
+let g:netrw_dirhist_6='/home/mir/.vim'
+let g:netrw_dirhist_7='/home/mir'
