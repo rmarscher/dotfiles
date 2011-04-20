@@ -28,6 +28,11 @@ set mouse=a
 set mousehide
 set mousemodel=popup
 
+" Code Folding, everything folded by default
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=1
+
 " Make mouse middle click paste without formatting it.
 map <MouseMiddle> <Esc>"*p
 
@@ -54,6 +59,10 @@ else
 endif
 
 set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 colorscheme solarized
 
 " Set fixed height widht of gvim window
@@ -96,6 +105,8 @@ noremap <Right> <Esc>:bn<CR>
 inoremap <Right> <Esc>:bn<CR>
 nnoremap <Right> <Esc>:bn<CR>
 vnoremap <Right> <Esc>:bn<CR>
+
+
 
 " Disable up/down arrow keys
 noremap <up> <nop>

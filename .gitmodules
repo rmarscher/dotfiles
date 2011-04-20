@@ -73,3 +73,6 @@
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "gnome-terminal-color-solarized"]
+	path = gnome-terminal-color-solarized
+	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
