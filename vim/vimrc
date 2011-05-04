@@ -30,8 +30,7 @@ set mousemodel=popup
 
 " Code Folding, everything folded by default
 set foldmethod=indent
-set foldnestmax=10
-set foldlevel=1
+set nofoldenable
 
 " Make mouse middle click paste without formatting it.
 map <MouseMiddle> <Esc>"*p
@@ -64,6 +63,8 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
+call togglebg#map("<F5>")
+
 
 " Set fixed height widht of gvim window
 if has('gui_running')
