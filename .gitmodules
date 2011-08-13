@@ -34,9 +34,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = git://github.com/mexpolk/vim-taglist.git
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
 	url = git://github.com/chrismetcalf/vim-yankring.git
@@ -76,3 +73,9 @@
 [submodule "gnome-terminal-color-solarized"]
 	path = gnome-terminal-color-solarized
 	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/indent-guides"]
+	path = vim/bundle/indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git

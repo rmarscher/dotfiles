@@ -85,7 +85,7 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 export LC_CTYPE=en_US.utf-8
-export PATH=~/bin:/usr/local/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/home/mn/Labs/go/bin:$PATH
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
 export LESS=FRSX
@@ -99,8 +99,14 @@ if [ `id -u` != '0' ]; then
   export PIP_RESPECT_VIRTUALENV=true
 fi
 
-#alias git=hub
-#alias rvim="gvim --remote-silent"
+# pip bash completion start
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
+# pip bash completion end
 
-
-#. ~/dotfiles/bash/git-completion.bash
+source $HOME/.ec2rc
