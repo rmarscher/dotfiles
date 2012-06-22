@@ -34,9 +34,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/yankring"]
-	path = vim/bundle/yankring
-	url = git://github.com/chrismetcalf/vim-yankring.git
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
 	url = git://github.com/kevinw/pyflakes-vim.git
@@ -79,3 +76,9 @@
 [submodule "vim/bundle/indent-guides"]
 	path = vim/bundle/indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "vim/bundle/html5"]
+	path = vim/bundle/html5
+	url = https://github.com/othree/html5.vim.git
