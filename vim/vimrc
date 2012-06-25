@@ -60,6 +60,12 @@ nnoremap k gk
 " loose the <shift> key for accessing the command area
 nnoremap ; :
 
+"Maps for jj to act as esc
+inoremap jj <esc>
+cnoremap jj <C-c>
+inoremap jk <esc>
+inoremap kj <esc>
+
 " <leader>v selects the just pasted text
 nnoremap <leader>v V`]
 
@@ -121,7 +127,7 @@ set foldmethod=indent
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 set noswapfile
-set undodir=~/.vim/undodir
+set undodir=~/.vim/undo
 set undofile
 
 " status line

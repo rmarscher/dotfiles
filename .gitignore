@@ -5,5 +5,5 @@
 *.so
 vim/.netrwhist
 vim/sessions
-vim/undodir
+vim/undo
 vim/.VimballRecord
