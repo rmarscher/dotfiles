@@ -94,6 +94,11 @@ let g:SuperTabDefaultCompletionType = "context"
 " tagbar
 let g:tagbar_usearrows = 1
 
+" syntastic
+noremap <F7> :Errors<CR>
+let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+
 " closetag
 autocmd FileType html,php let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,php source ~/.vim/bundle/closetag/plugin/closetag.vim
@@ -110,7 +115,6 @@ noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 " nerdtree
 map <F6> :NERDTreeToggle<CR>
-map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
 
 let NERDTreeShowBookmarks=1
@@ -155,7 +159,7 @@ set statusline+=%m\     "modified flag
 
 set statusline+=%{fugitive#statusline()}\  " git branch
 
-" Syntastic
+" syntastic status
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
