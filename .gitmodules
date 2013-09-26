@@ -88,3 +88,9 @@
 [submodule "vim/bundle/fakeclip"]
 	path = vim/bundle/fakeclip
 	url = https://github.com/kana/vim-fakeclip.git
+[submodule "aptana/solarized"]
+	path = aptana/solarized
+	url = https://github.com/bueltge/Aptana-Solarized.git
+[submodule "solarized"]
+	path = solarized
+	url = https://github.com/altercation/solarized.git
